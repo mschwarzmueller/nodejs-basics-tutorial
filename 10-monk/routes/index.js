@@ -9,7 +9,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/get-data', function(req, res, next) {
-  userData.find({}).then((docs) => {
+  userData.find({})
+    .then(function(docs){
         res.render('index',{items: docs});
   });
 });
